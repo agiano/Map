@@ -400,7 +400,7 @@ const yearInput = document.getElementById("yearInput")
       anchor: [0.5, 0.5],
       anchorXUnits: 'fraction',
       anchorYUnits: 'fraction',
-      src: '/Users/alexandrosgiannopoulos/Desktop/All desktop/web-edits/project-1/ol/map-5-data/images/battleicon2.png',
+      src: 'images/battleicon2.png',
       opacity: 1,
       scale: .25,
     }),
@@ -533,10 +533,18 @@ $(".menu-container-2").click(function(){
   $(".menu-container-2").toggleClass("block")
 })
 
-$("#showDraw").click(function(){
-  $("#json-val").toggleClass("hidden")
-  $("#json-val").toggleClass("block")
-})
+$("#showDraw").click(function () {
+  $("#json-val").toggleClass("hidden");
+  if ($("#json-val").hasClass("hidden") === true){
+    $("#showDraw").html("Show Drawing Text")
+    // console.log("show")
+  }
+  $("#json-val").toggleClass("block");
+  if ($("#json-val").hasClass("block") === true){
+    $("#showDraw").html("Hide Drawing Text")
+    // console.log("hide")
+  }
+});
 //
 
 // Show Coordinates on info tab
